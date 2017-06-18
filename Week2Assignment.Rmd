@@ -1,0 +1,38 @@
+---
+title: 'Developing Data Product: Week 2 Assignment'
+output:
+  html_document:
+    keep_md: yes
+  pdf_document: default
+date: "June 18, 2017"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+
+## Interactive Map Leaflet
+
+Some New York points of interest: Empire State Building, New York University, One World Trade Center, Metropolitan Museum of Art
+
+```{r}
+library(leaflet)
+mapNYC = leaflet() %>%
+ addTiles() %>%
+ addMarkers (lat= 40.7484404, lng= -73.9856554, popup="Empire State Building")%>%
+ addMarkers (lat= 40.7291475, lng = -73.9959781, popup="New York University")%>%
+ addMarkers (lat= 40.7129947, lng = -74.0131609, popup="One World Trade Center")%>%
+ addMarkers (lat= 40.7794366, lng= -73.963244, popup="Metropolitan Museum of Art")
+
+mapNYC
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
